@@ -4,7 +4,8 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm run:*)",
       "Bash(taskkill:*)",
-      "Bash(\"C:/Users/DH/Desktop/tichxanh3326/app/page_body.tmp\":*)"
+      "Bash(\"C:/Users/DH/Desktop/tichxanh3326/app/page_body.tmp\":*)",
+      "Bash(node:*)"
     ]
   }
 }

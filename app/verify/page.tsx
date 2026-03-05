@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { SignupModal } from "../components";
 
@@ -25,11 +26,8 @@ export default function VerifyPage() {
           {/* Header row */}
           <div className="flex items-center gap-4 mb-8">
             {/* Blue badge icon */}
-            <div className="shrink-0 w-14 h-14 rounded-full bg-[#0866FF] flex items-center justify-center shadow-md">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                <circle cx="15" cy="15" r="15" fill="#0866FF" />
-                <path d="M9 15.5l4.5 4.5 8-9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="shrink-0 w-14 h-14 flex items-center justify-center">
+              <Image src="/image/ic_blue.svg" width={56} height={56} alt="Meta Verified" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900 leading-tight">Meta Verified – Rewards for you</h1>
