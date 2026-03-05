@@ -928,7 +928,6 @@ function Header({ openModal }: { openModal: () => void }) {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           <a href="#benefits" className="text-sm font-medium text-gray-700 hover:text-[#0866FF] transition-colors">Benefits</a>
-          <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-[#0866FF] transition-colors">Pricing</a>
           <a href="#faq" className="text-sm font-medium text-gray-700 hover:text-[#0866FF] transition-colors">FAQ</a>
         </nav>
 
@@ -936,7 +935,7 @@ function Header({ openModal }: { openModal: () => void }) {
         <div className="hidden md:flex items-center gap-3">
           <button onClick={openModal} className="text-sm font-semibold text-[#0866FF] hover:underline">Log in</button>
           <button onClick={openModal} className="bg-[#0866FF] text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#0755d4] transition-colors">
-            Get started
+            Claim free badge
           </button>
         </div>
 
@@ -952,9 +951,8 @@ function Header({ openModal }: { openModal: () => void }) {
       {open && (
         <div className="md:hidden bg-white border-t border-gray-100 px-5 py-4 space-y-3">
           <a href="#benefits" className="block text-sm font-medium text-gray-700">Benefits</a>
-          <a href="#pricing" className="block text-sm font-medium text-gray-700">Pricing</a>
           <a href="#faq" className="block text-sm font-medium text-gray-700">FAQ</a>
-          <button onClick={openModal} className="w-full bg-[#0866FF] text-white text-sm font-semibold py-2.5 rounded-full mt-2">Get started</button>
+          <button onClick={openModal} className="w-full bg-[#0866FF] text-white text-sm font-semibold py-2.5 rounded-full mt-2">Claim free badge</button>
         </div>
       )}
     </header>
@@ -978,19 +976,28 @@ function Hero({ openModal }: { openModal: () => void }) {
           </div>
         </div>
 
+        {/* Invite badge */}
+        <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" fill="#16a34a" fillOpacity="0.15" stroke="#16a34a" strokeWidth="1.3"/>
+            <path d="M5 8.5l2 2 4-4" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          You're on the invite list — completely free
+        </div>
+
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight mb-6">
-          Build credibility<br />
-          <span className="text-[#0866FF]">across social media</span>
+          Get verified for free<br />
+          <span className="text-[#0866FF]">you&apos;ve been invited</span>
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Meta Verified helps you authenticate your identity, get the blue verification badge,
-          and protect your account with dedicated support on Facebook and Instagram.
+          You have been selected by Meta to receive a free blue verification badge on Facebook and Instagram.
+          Confirm your identity now to activate your badge — no subscription required.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button onClick={openModal} className="bg-[#0866FF] text-white font-semibold px-9 py-3.5 rounded-full text-base hover:bg-[#0755d4] transition-colors shadow-sm">
-            Subscribe now
+            Claim your free badge
           </button>
           <button onClick={openModal} className="border border-gray-300 text-gray-800 font-semibold px-9 py-3.5 rounded-full text-base hover:bg-gray-50 transition-colors">
             Learn more
@@ -1000,8 +1007,8 @@ function Hero({ openModal }: { openModal: () => void }) {
         {/* Trust badges */}
         <div className="mt-12 flex flex-wrap gap-6 justify-center">
           {[
+            "Free for invited accounts",
             "Official identity verification",
-            "24/7 account support",
             "Impersonation protection",
           ].map((label, i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-gray-500">
@@ -1367,13 +1374,20 @@ function CTABanner({ openModal }: { openModal: () => void }) {
           <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl"><FbIcon size={36} /></div>
           <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl"><IgIcon size={36} /></div>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to get verified?</h2>
+        <div className="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" fill="white" fillOpacity="0.3" stroke="white" strokeWidth="1.3"/>
+            <path d="M5 8.5l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Invite-only — free of charge
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Your free badge is waiting</h2>
         <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
-          Build trust, protect your identity, and unlock exclusive features on Facebook and Instagram today.
+          You&apos;ve been selected to receive Meta Verified at no cost. Claim your blue badge now before this invitation expires.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button onClick={openModal} className="bg-white text-[#0866FF] font-bold px-9 py-3.5 rounded-full text-base hover:bg-blue-50 transition-colors">
-            Get started
+            Claim free badge
           </button>
           <button onClick={openModal} className="border-2 border-white/60 text-white font-semibold px-9 py-3.5 rounded-full text-base hover:bg-white/10 transition-colors">
             Learn more
@@ -1401,7 +1415,7 @@ function Footer() {
           </div>
 
           {[
-            { title: "Product", links: ["Meta Verified", "Facebook", "Instagram", "Pricing"] },
+            { title: "Product", links: ["Meta Verified", "Facebook", "Instagram"] },
             { title: "Support", links: ["Help Center", "FAQ", "Contact us", "Account issues"] },
             { title: "Legal", links: ["Terms of service", "Privacy policy", "Cookie policy", "Subscription terms"] },
           ].map((col) => (
@@ -1442,7 +1456,6 @@ export default function Home() {
       <Header openModal={open} />
       <Hero openModal={open} />
       <Benefits />
-      <Pricing openModal={open} />
       <Showcase />
       <FAQ />
       <CTABanner openModal={open} />
